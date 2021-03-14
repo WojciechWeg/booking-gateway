@@ -12,11 +12,11 @@ public class RouteConfig {
     public RouteLocator localHostRoutes(RouteLocatorBuilder builder){
         return  builder.routes()
                 .route(r -> r.path("/bookRoom*","/bookRoom/*","/bookRoom?*","/bookRoom/givenRoom?*","/bookRoom/givenUser?*")
-                    .uri("lb://BOOKING-SERVICE-EUREKA-FEIGN-CLIENT"))
+                    .uri("lb://BOOKING-SERVICE"))
                 .route(r -> r.path("/room/*")
-                    .uri("lb://ROOM-SERVICE-EUREKA-CLIENT"))
+                    .uri("lb://ROOM-SERVICE"))
                 .route(r -> r.path("/user/*")
-                    .uri("lb://USER-SERVICE-EUREKA-CLIENT"))
+                    .uri("lb://USER-SERVICE"))
                 .build();
     }
 
